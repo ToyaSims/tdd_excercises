@@ -1,19 +1,18 @@
 function password_is_valid(password){
-     
-  let validPass = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.{8,}$)/
-  let result = validPass.test(password) 
- 
-  try {
-    if(result == false) throw('invalid password');
-    
-  } catch (error) {
-    console.log('Invalid password' + error);
- 
-  }
- 
-  return result;
+
+   var check = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+   var tester = check.test(password);
+ if(tester == true )
+   {
+       return true
+   }
+ else
+   {
+       throw  "invalid password"
+   }
+
  }
- 
+
 
 function password_is_ok(password) {
  
