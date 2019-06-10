@@ -1,18 +1,20 @@
 function password_is_valid(password){
-
-   var check = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-   var tester = check.test(password);
- if(tester == true )
-   {
-       return true
+     
+    var check = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}$/;          
+    var result = check.test(password); 
+  
+   try {
+     if(result == false) throw('password must have atleast one uppercase letter, lowercase letter and number');
+     
+   } catch (err) {
+     return 'Error ' + err;
+  
    }
- else
-   {
-       throw  "invalid password"
-   }
-
- }
-
+  
+     finally {
+        return result;
+     }
+  }
 
 function password_is_ok(password) {
  
